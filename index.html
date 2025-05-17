@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Análise de Dados | Power BI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="./imagens/dashboard.png">
+    <link rel="icon" type="image/png" href="imagens/Dashboard.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         .dashboard-item {
@@ -30,6 +30,10 @@
         }
         .modal.active .modal-content {
             transform: translateY(0);
+        }
+
+        .fab:hover {
+            transform: scale(1.2);
         }
 
         #name{
@@ -86,6 +90,76 @@
             position: relative;
         }
 
+        .dark-mode {
+          background-color: #1a1a1a;
+          color: #f0f0f0;
+        }
+
+        .dark-mode .bg-gray-50 .shadow-md{
+          background-color: #222 !important;
+        }
+        /* Aplica contraste mantendo diferença entre cinzas */
+        .dark-mode .bg-white,
+        .dark-mode .bg-gray-50 {
+          background-color: #2c2c2c !important;
+        }
+        
+        .dark-mode #services .bg-gray-50 {
+          background-color: #222 !important;
+        }
+
+        .dark-mode .bg-gray-50 .shadow-md{
+          background-color: #222 !important;
+        }
+
+        .dark-mode .text-gray-800,
+        .dark-mode .text-gray-700,
+        .dark-mode .text-gray-600 {
+          color: #f0f0f0 !important;
+        }
+
+        .dark-mode .text-gray-400 {
+          color: #bbbbbb !important;
+        }
+
+        .dark-mode .bg-gray-800 {
+          background-color: #111111 !important;
+        }
+
+        .dark-mode .bg-purple-100 {
+          background-color: #5b3f79 !important;
+        }
+
+        .dark-mode .text-purple-800 {
+          color: #e0caff !important;
+        }
+
+        .dark-mode input,
+        .dark-mode textarea {
+          background-color: #333 !important;
+          color: #f0f0f0 !important;
+          border-color: #555 !important;
+        }
+
+        .dark-mode .modal-content {
+          background-color: #2c2c2c !important;
+          color: #f0f0f0 !important;
+        }
+        .dark-mode a[href="#portfolio"].bg-white {
+            background-color: #333 !important;
+            color: #f0f0f0 !important;
+            border: 1px solid #666;
+        }
+
+        .dark-mode .filter-btn {
+            background-color: #222 !important;
+            color: #f0f0f0 !important;
+            border: 1px solid #333;
+        }
+
+        .dark-mode .fab:hover {
+            color: #ffffff !important;
+        }
 
     </style>
 </head>
@@ -109,6 +183,10 @@
                 <button class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+                <button id="theme-toggle" class="text-white text-xl ml-4" title="Alternar tema">
+                <i class="fas fa-moon"></i>
+                </button>
+
                 <div class="mobile-menu md:hidden">
                     <a href="#services">Serviços</a>
                     <a href="#portfolio">Portfólio</a>
@@ -263,7 +341,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="./imagens/NY.png" alt="Foto Profissional" class="rounded-xl shadow-lg w-full">
+                    <img src="./imagens/Sobre_ft.png" alt="Foto Profissional" class="rounded-xl shadow-lg w-full">
                 </div>
             </div>
         </div>
@@ -392,6 +470,22 @@
 
 
     <script>
+
+          const themeToggle = document.getElementById('theme-toggle');
+          const icon = themeToggle.querySelector('i');
+            
+          themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        
+            // Trocar ícone
+            if (document.body.classList.contains('dark-mode')) {
+              icon.classList.remove('fa-moon');
+              icon.classList.add('fa-sun');
+            } else {
+              icon.classList.remove('fa-sun');
+              icon.classList.add('fa-moon');
+            }
+          });
 
         const btn = document.querySelector('.md\\:hidden');
         const menu = document.querySelector('.mobile-menu');
