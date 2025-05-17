@@ -47,6 +47,46 @@
             background-color: white;
         }
 
+        /* Menu mobile inicialmente oculto */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 1rem;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            height: calc(100vh - 100%); /* preenche o restante da tela abaixo do header */
+            z-index: 10;
+        }
+
+        /* Classe para exibir o menu quando ativo */
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        /* Botões do menu mobile */
+        .mobile-menu a {
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 170%;
+        }
+
+        .mobile-menu a:hover {
+            color: #d1d5db; /* hover:text-gray-200 */
+            font-size: 200%;
+            transition: all 0.3s ease;
+        }
+
+        /* Para posicionar o header corretamente */
+        header {
+            position: relative;
+        }
+
+
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -60,7 +100,6 @@
                 </div>
                 <nav class="hidden md:block">
                     <ul class="flex space-x-8">
-                        <li><a href="#home" class="hover:text-gray-200 transition">Início</a></li>
                         <li><a href="#services" class="hover:text-gray-200 transition">Serviços</a></li>
                         <li><a href="#portfolio" class="hover:text-gray-200 transition">Portfólio</a></li>
                         <li><a href="#about" class="hover:text-gray-200 transition">Sobre</a></li>
@@ -70,6 +109,12 @@
                 <button class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+                <div class="mobile-menu md:hidden">
+                    <a href="#services">Serviços</a>
+                    <a href="#portfolio">Portfólio</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#contact">Contato</a>
+                </div>
             </div>
         </div>
     </header>
@@ -247,14 +292,18 @@
                         <div class="mt-8">
                             <h4 class="font-semibold mb-3">Redes Sociais</h4>
                             <div class="flex space-x-4">
-                                <a href="https://www.linkedin.com/in/leonardo-cherutti-b406b0201/" class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition">
+                                <a href="https://www.linkedin.com/in/leonardo-cherutti-b406b0201/" class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition" target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://github.com/LeonardoCherutti" class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition">
+                                <a href="https://github.com/LeonardoCherutti" class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://www.instagram.com/leonardocherutti/" class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition">
+                                <a href="https://www.instagram.com/leonardocherutti/" class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition" target="_blank">
                                     <i class="fab fa-instagram"></i>
+
+                                <a href="https://wa.me/554891427583"
+                                class="bg-white text-purple-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-100 transition" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
                             </div>
                         </div>
@@ -343,6 +392,20 @@
 
 
     <script>
+
+        const btn = document.querySelector('.md\\:hidden');
+        const menu = document.querySelector('.mobile-menu');
+        const menuLinks = document.querySelector('.mobile-menu a');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        menuLinks.addEventListener(
+            'click', () => {
+            menu.classList.toggle('active');
+        });
+
         // Portfolio Filter
         const filterButtons = document.querySelectorAll('.filter-btn');
         const dashboardItems = document.querySelectorAll('.dashboard-item');
