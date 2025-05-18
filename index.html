@@ -261,7 +261,7 @@
                     <img src="./imagens/PA.png" alt="Dashboard Comercial" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Análise de Atendimentos</h3>
-                        <p class="text-gray-600 mb-4">Dashboard completo com análise de atendimentos ambulatoriais por diferentes segmentos.</p>
+                        <p class="text-gray-600 mb-4">Dashboard completo com análise de atendimentos em saúde por diferentes segmentos.</p>
                         <button class="view-detail text-purple-600 font-medium hover:text-purple-800 transition" data-id="1">Ver detalhes</button>
                     </div>
                 </div>
@@ -280,7 +280,7 @@
                 <div class="dashboard-item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-category="Financeiro">
                     <img src="./imagens/Faturamento geral1.png" alt="Dashboard Financeiro" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Receita Hospitalar</h3>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Controle de Receita</h3>
                         <p class="text-gray-600 mb-4">Análise geral das receitas, despesas, margens e indicadores financeiros.</p>
                         <button class="view-detail text-purple-600 font-medium hover:text-purple-800 transition" data-id="3">Ver detalhes</button>
                     </div>
@@ -298,10 +298,10 @@
                 
                 <!-- Dashboard 5 -->
                 <div class="dashboard-item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-category="Faturamento">
-                    <img src="./imagens/Internações.png" alt="Dashboard CRM" class="w-full h-48 object-cover">
+                    <img src="./imagens/GraficoMapa.png" alt="Dashboard CRM" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Análise de Internações</h3>
-                        <p class="text-gray-600 mb-4">Segmentação de clientes, análise de ticket médio e lifetime value.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Análise regional</h3>
+                        <p class="text-gray-600 mb-4">Análises regionais de indicadores, mercado e expansão.</p>
                         <button class="view-detail text-purple-600 font-medium hover:text-purple-800 transition" data-id="5">Ver detalhes</button>
                     </div>
                 </div>
@@ -471,10 +471,10 @@
 
     <script>
 
-          const themeToggle = document.getElementById('theme-toggle');
-          const icon = themeToggle.querySelector('i');
-            
-          themeToggle.addEventListener('click', () => {
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+           
+        themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         
             // Trocar ícone
@@ -535,16 +535,16 @@
         const dashboardData = {
             '1': {
                 title: 'Performance de setor ambulatorial',
-                description: 'Dashboard completo com análise de atendimentos ambulatoriais por diferentes segmentos, auxiliando nas estratégias para o direcionamento de investimentos futuros.',
+                description: 'Dashboard completo com análise de atendimentos ambulatoriais e hospitalares por diferentes segmentos, auxiliando em estratégias para o direcionamento de investimentos futuros.',
                 image: './imagens/PA3.png'
             },
             '2': {
                 title: 'Gestão de Infraestrutura',
-                description: 'Análise de turnover, absenteísmo e performance de colaboradores. Inclui indicadores de satisfação, tempo médio de empresa e análise de departamentos com maior rotatividade.',
+                description: 'Análise da infraestrutura de serviços, unidades, leitos, equipamentos e habilitações, permitindo identificar gargalos, mapear cobertura e avaliar a capacidade instalada.',
                 image: './imagens/cnes3.png'
             },
             '3': {
-                title: 'Receita Hospitalar',
+                title: 'Controle de Receita',
                 description: 'Análise detalhada de receitas, despesas, margens e indicadores financeiros. Permite acompanhar o fluxo de caixa, comparar com orçamento e identificar oportunidades de redução de custos.',
                 image: './imagens/Faturamento geral3.png'
             },
@@ -554,9 +554,9 @@
                 image: './imagens/Faturamento posterior3.png'
             },
             '5': {
-                title: 'Análise de Internações',
-                description: 'Segmentação de clientes por valor, frequência e recência de compra. Inclui análise de ticket médio, lifetime value e identificação de clientes em risco de churn.',
-                image: './imagens/sih3.png'
+                title: 'Análise regional',
+                description: 'Painéis interativos que detalham indicadores por região, permitindo comparações dinâmicas entre estados e macrorregiões.',
+                image: './imagens/GraficoMapas.png'
             },
             '6': {
                 title: 'Taxa de Evolução (%MoM / %YoY)',
